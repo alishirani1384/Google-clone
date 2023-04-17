@@ -9,7 +9,7 @@ import VoiceBtn from "@/components/buttons/VoiceBtn";
 export default function Home() {
   return (
     <div className="w-full h-screen flex flex-col">
-      <header className="py-6 px-4 border-b-2 border-[#3C3C3C]">
+      <header className="py-6 px-4 border-b-2 dark:border-[#3C3C3C]">
         <div className="flex items-center justify-between container mx-auto">
           <ThemeBtn />
           <Avatar />
@@ -20,15 +20,15 @@ export default function Home() {
         <SearchInput />
         <VoiceBtn />
       </main>
-      <footer className="border-t-2 hidden lg:block border-[#3C3C3C] mt-auto w-full">
+      <footer className="border-t-2 hidden lg:block dark:border-[#3C3C3C] mt-auto w-full">
         <div className="mx-auto container py-4 px-4 flex items-center justify-between">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-8 dark:text-gray-400">
             <p className="link link-hover uppercase font-bold text-lg">gmail</p>
             <p className="link link-hover uppercase font-bold text-lg">
               images
             </p>
           </div>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-8 dark:text-gray-400">
             <p className="link text-lg">Help</p>
             <p className="link text-lg">Privacy</p>
             <p className="link text-lg">Terms</p>

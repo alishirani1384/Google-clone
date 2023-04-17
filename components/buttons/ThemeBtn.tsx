@@ -4,10 +4,11 @@ import React, { useState } from "react";
 function ThemeBtn() {
     const [swap, setSwap] = useState(false);
     function handleClick() {
-        setSwap(!swap);
+      setSwap(!swap);
+      document.documentElement.classList.toggle("dark")
     }
   return (
-    <button onClick={handleClick} className="btn btn-circle swap swap-rotate">
+    <button onClick={handleClick} className="btn btn-circle dark:text-white dark:bg-neutral text-neutral bg-transparent hover:text-white swap swap-rotate">
       <svg
         className={`swap-${swap ? "off" : "on"} fill-current w-8 h-8`}
         xmlns="http://www.w3.org/2000/svg"

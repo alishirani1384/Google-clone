@@ -9,7 +9,7 @@ function SearchInput() {
       <input
         type="search"
         placeholder="Search Google"
-        className="input input-lg text-white pl-14 placeholder:text-[#595959] placeholder:font-semibold gr focus:outline-none shadow-md w-full"
+        className="input input-lg caret-black dark:caret-white dark:text-white pl-14 placeholder:text-[#595959] placeholder:font-semibold gr focus:outline-none shadow-md w-full"
       />
       <Image
         src={SearchIcon}

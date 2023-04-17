@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.gr {
+.dark .gr {
   border: double 3px transparent;
   border-radius: 6px;
   background-image: linear-gradient(#313131, #313131),
+    linear-gradient(to right, #4285f4, #ea4335, #fbbc05, #34a853);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.gr{
+  border: double 3px transparent;
+  border-radius: 6px;
+  background-image: linear-gradient(white, white),
     linear-gradient(to right, #4285f4, #ea4335, #fbbc05, #34a853);
   background-origin: border-box;
   background-clip: padding-box, border-box;
