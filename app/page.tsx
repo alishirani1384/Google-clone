@@ -20,7 +20,7 @@ export default function Home() {
         <SearchInput />
         <VoiceBtn />
       </main>
-      <footer className="border-t-2 border-[#3C3C3C] mt-auto w-full">
+      <footer className="border-t-2 hidden lg:block border-[#3C3C3C] mt-auto w-full">
         <div className="mx-auto container py-4 px-4 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <p className="link link-hover uppercase font-bold text-lg">gmail</p>
