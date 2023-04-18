@@ -10,7 +10,11 @@ function Avatar() {
   return (
     <div
       className="avatar online"
-      onClick={() => signIn("google")}>
+      onClick={() =>
+        signIn("google", {
+          callbackUrl: "https://google-clone-lyart-eight.vercel.app",
+        })
+      }>
       <div className="w-12 h-12 rounded-full">
         <Image src={AvatarImg} alt="profile" className="object-cover" />
       </div>
