@@ -4,7 +4,6 @@ import Avatar from "@/components/Avatar";
 import ThemeBtn from "@/components/buttons/ThemeBtn";
 import SearchInput from "@/components/SearchInput";
 import VoiceBtn from "@/components/buttons/VoiceBtn";
-import { getServerSession } from "next-auth";
 
 
 export default async function Home() {
