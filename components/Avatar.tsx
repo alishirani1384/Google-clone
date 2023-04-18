@@ -13,7 +13,7 @@ function Avatar() {
       onClick={() =>
         signIn("google", {
           callbackUrl:
-            "https://google-clone-lyart-eight.vercel.app/api/auth/callback/google",
+            "https://google-clone-lyart-eight.vercel.app",
         })
       }>
       <div className="w-12 h-12 rounded-full">
