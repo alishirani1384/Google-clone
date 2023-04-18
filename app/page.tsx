@@ -4,15 +4,18 @@ import Avatar from "@/components/Avatar";
 import ThemeBtn from "@/components/buttons/ThemeBtn";
 import SearchInput from "@/components/SearchInput";
 import VoiceBtn from "@/components/buttons/VoiceBtn";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
-
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
     <div className="w-full h-screen flex flex-col">
       <header className="py-6 px-4 border-b-2 dark:border-[#3C3C3C]">
         <div className="flex items-center justify-between container mx-auto">
           <ThemeBtn />
-          <Avatar />
+          <Avatar session={session} />
         </div>
       </header>
       <main className="flex container mx-auto items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col gap-10">
