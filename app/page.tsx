@@ -5,7 +5,19 @@ import ThemeBtn from "@/components/buttons/ThemeBtn";
 import SearchInput from "@/components/SearchInput";
 import VoiceBtn from "@/components/buttons/VoiceBtn";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import GoogleProvider from "next-auth/providers/google";
+import { NextAuthOptions } from "next-auth";
+
+const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: true,
+  providers: [
+    GoogleProvider({
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET!,
+    }),
+  ],
+};
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
