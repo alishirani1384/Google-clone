@@ -8,7 +8,7 @@ function VoiceBtn() {
            <button className='btn !btn-circle btn-ghost btn-lg gr'>
           <Image src={MicroIcon} width={35} height={25} alt='icon'/>
             </button> 
-            <p className='uppercase'>try with voice</p>
+            <p className='uppercase dark:text-gray-300'>try with voice</p>
       </div>
       
   )

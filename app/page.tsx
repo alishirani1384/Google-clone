@@ -28,7 +28,7 @@ export default async function Home() {
         <div className="flex items-center justify-between container mx-auto">
           <ThemeBtn />
           <Avatar />
-          <p className="white">{session?.user?.name}</p>
+          <p className="text-white">{session?.user?.name}</p>
         </div>
       </header>
       <main className="flex container mx-auto items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col gap-10">
