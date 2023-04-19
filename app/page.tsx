@@ -4,9 +4,12 @@ import Avatar from "@/components/Avatar";
 import ThemeBtn from "@/components/buttons/ThemeBtn";
 import SearchInput from "@/components/SearchInput";
 import VoiceBtn from "@/components/buttons/VoiceBtn";
-
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function Home() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
   return (
     <div className="w-full h-screen flex flex-col">
       <header className="py-6 px-4 border-b-2 dark:border-[#3C3C3C]">
