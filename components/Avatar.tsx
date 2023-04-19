@@ -9,10 +9,7 @@ function Avatar() {
   
   return (
     <div
-      className="avatar online"
-      onClick={() =>
-        signIn("google")
-      }>
+      className="avatar online">
       <div className="w-12 h-12 rounded-full">
         <Image src={AvatarImg} alt="profile" className="object-cover" />
       </div>

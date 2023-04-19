@@ -5,19 +5,8 @@ import ThemeBtn from "@/components/buttons/ThemeBtn";
 import SearchInput from "@/components/SearchInput";
 import VoiceBtn from "@/components/buttons/VoiceBtn";
 import { getServerSession } from "next-auth/next";
-import GoogleProvider from "next-auth/providers/google";
-import { NextAuthOptions } from "next-auth";
-
-const authOptions: NextAuthOptions = {
-  secret: process.env.NEXTAUTH_SECRET,
-  debug: true,
-  providers: [
-    GoogleProvider({
-      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET!,
-    }),
-  ],
-};
+import { authOptions } from "@/app/authoptions";
+import SignInBtn from "@/components/buttons/SignInBtn";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -27,8 +16,9 @@ export default async function Home() {
       <header className="py-6 px-4 border-b-2 dark:border-[#3C3C3C]">
         <div className="flex items-center justify-between container mx-auto">
           <ThemeBtn />
-          <Avatar />
-          <p className="text-white">{session?.user?.name}</p>
+          {
+            session?<Avatar/>:<SignInBtn/>
+          }
         </div>
       </header>
       <main className="flex container mx-auto items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col gap-10">
