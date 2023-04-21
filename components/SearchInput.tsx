@@ -1,14 +1,25 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import SearchIcon from "../assets/search.png"
 import GoogleIcon from "../assets/google.png"
+import { useSearch } from "@/store/search";
+import { shallow } from 'zustand/shallow'
 
 function SearchInput() {
+  const { search, setSearch } = useSearch(
+  (state) => ({ search: state.search, setSearch: state.setSearch }),
+  shallow
+  )
+
+  
   return (
     <form className="relative md:w-3/4 xl:w-1/2 w-full px-4">
       <input
         type="search"
         placeholder="Search Google"
+        value={search}
+        onChange={(e)=>setSearch(e.target.value)}
         className="input input-lg caret-black dark:caret-white dark:text-white pl-14 placeholder:text-[#595959] placeholder:font-semibold gr focus:outline-none shadow-md w-full"
       />
       <Image
