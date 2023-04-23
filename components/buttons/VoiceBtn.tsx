@@ -8,6 +8,7 @@ import { shallow } from "zustand/shallow";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import { BeatLoader } from "react-spinners";
 
 function VoiceBtn() {
   const { search, setSearch } = useSearch(
@@ -33,7 +34,7 @@ function VoiceBtn() {
         onClick={handleClick}
         className="btn !btn-circle btn-ghost btn-lg gr">
         {listening ? (
-          <p>listening...</p>
+          <BeatLoader color="#4285F4" size={13} />
         ) : (
           <Image src={MicroIcon} width={35} height={25} alt="icon" />
         )}
