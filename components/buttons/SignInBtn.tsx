@@ -1,8 +1,9 @@
 "use client"
 import { signIn } from 'next-auth/react';
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function SignInBtn() {
+  
   return (
     <button
       onClick={() => signIn("google")}
