@@ -15,7 +15,7 @@ export default async function Home() {
       <header className="py-6 px-4 border-b-2 dark:border-[#3C3C3C]">
         <div className="flex items-center justify-between container mx-auto">
           <ThemeBtn />
-          {session ? <Avatar /> : <SignInBtn />}
+          {session ? <Avatar user={session.user?.name?.[0]} /> : <SignInBtn />}
         </div>
       </header>
       <main className="flex container mx-auto items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col gap-10">

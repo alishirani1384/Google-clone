@@ -1,17 +1,12 @@
-"use client"
 import React from 'react'
-import AvatarImg from "../assets/avatar.jpg";
-import Image from 'next/image';
-import { signIn } from "next-auth/react";
 
 
-function Avatar() {
+function Avatar({user}:{user:string|undefined|null}) {
   
   return (
-    <div
-      className="avatar online">
+    <div className="avatar online">
       <div className="w-12 h-12 rounded-full">
-        <Image src={AvatarImg} alt="profile" className="object-cover" />
+        <span className="text-3xl">{user}</span>
       </div>
     </div>
   );
