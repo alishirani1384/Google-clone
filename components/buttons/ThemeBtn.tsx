@@ -7,7 +7,7 @@ function ThemeBtn() {
   const [swap, setSwap] = useState(false);
     function handleClick() {
       setSwap(!swap);
-      
+      document.documentElement.classList.toggle("dark")
   }
   return (
     <button onClick={handleClick} className="btn btn-circle dark:text-white dark:bg-neutral text-neutral bg-transparent hover:text-white swap swap-rotate">

@@ -16,7 +16,7 @@ function page({ searchParams }:{searchParams:{q:string}}) {
   
   
   return (
-    <div className='text-white container px-4 py-6 mx-auto'>page</div>
+    <div className='text-white container px-4 py-6 mx-auto'>{searchParams.q}</div>
   )
 }
 

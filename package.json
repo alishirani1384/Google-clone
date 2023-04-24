@@ -22,6 +22,7 @@
     "postcss": "8.4.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "react-speech-recognition": "^3.10.0",
     "react-spinners": "^0.13.8",
     "regenerator-runtime": "^0.13.11",
