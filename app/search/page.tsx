@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
+import Pagination from "@/components/Pagination";
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -14,8 +15,8 @@ export async function generateMetadata({
   };
 }
 
-async function page({ searchParams }: { searchParams: { q: string } }) {
-  const url = `https://google-search72.p.rapidapi.com/search?query=${searchParams.q}&start=0`;
+async function page({ searchParams }: { searchParams: { q: string; page:string} }) {
+  const url = `https://google-search72.p.rapidapi.com/search?query=${searchParams.q}&start=${searchParams.page}`;
   const options = {
     method: "GET",
     headers: {
@@ -30,10 +31,10 @@ async function page({ searchParams }: { searchParams: { q: string } }) {
   return (
     <div className="dark:text-white container flex flex-col px-4 py-6 mx-auto">
       <p className="text-sm font-semibold">
-        About {data.estimatedResultCount} results
+       Page {+searchParams.page + 1} of About {data.estimatedResultCount} results
       </p>
       <div className="flex flex-col mt-5 gap-5">
-        {data.items.map((s: { link: string | undefined; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; displayLink: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; snippet: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }, i: React.Key | null | undefined) => {
+        {data.items?.map((s: { link: string | undefined; title: string | undefined; displayLink: string | undefined; snippet: string | undefined; }, i: React.Key | null | undefined) => {
           return (
             <div key={i}>
               <h2 className="text-lg font-semibold"><a href={s.link} target="_block">{s.title}</a></h2>
@@ -43,6 +44,7 @@ async function page({ searchParams }: { searchParams: { q: string } }) {
           );
         })}
       </div>
+      <Pagination/>
     </div>
   );
 }
