@@ -29,7 +29,7 @@ function SearchInput() {
   function handleSubmit(e: { preventDefault: () => void; }) {
     e.preventDefault()
     if (search) {
-      router.push("/search"+"?"+createQueryString("q",search)+"&"+createQueryString("page","0"))
+      router.push("/search"+"?"+createQueryString("q",search))
     } else {
       return false
     }

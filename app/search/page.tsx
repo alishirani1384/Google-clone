@@ -16,7 +16,7 @@ export async function generateMetadata({
 }
 
 async function page({ searchParams }: { searchParams: { q: string; page:string} }) {
-  const url = `https://google-search72.p.rapidapi.com/search?query=${searchParams.q}&start=${searchParams.page}`;
+  const url = `https://google-search72.p.rapidapi.com/search?query=${searchParams.q}`;
   const options = {
     method: "GET",
     headers: {
