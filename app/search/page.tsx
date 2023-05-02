@@ -27,7 +27,8 @@ async function page({ searchParams }: { searchParams: { q: string; page:string} 
   };
   const response = await fetch(url, options);
   const data = await response.json();
-
+ console.log(data);
+ 
   return (
     <div className="dark:text-white container flex flex-col px-4 py-6 mx-auto">
       <p className="text-sm font-semibold">
@@ -43,6 +44,9 @@ async function page({ searchParams }: { searchParams: { q: string; page:string} 
             </div>
           );
         })}
+        {
+          data.message && <h3>{data.message}</h3>
+        }
       </div>
       <Pagination/>
     </div>
