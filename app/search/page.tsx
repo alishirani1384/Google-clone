@@ -27,8 +27,8 @@ async function page({
   return (
     <div className="dark:text-white container flex flex-col px-4 py-6 mx-auto">
       <p className="text-sm font-semibold">
-        About {data.searchInformation.formattedTotalResults} results (
-        {data.searchInformation.formattedSearchTime} seconds)
+        About {data.searchInformation?.formattedTotalResults} results (
+        {data.searchInformation?.formattedSearchTime} seconds)
       </p>
       <div className="flex flex-col mt-5 gap-5">
         {data.items?.map(
