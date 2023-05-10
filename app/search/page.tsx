@@ -1,7 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import Pagination from "@/components/Pagination";
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -102,7 +101,6 @@ async function page({
         )}
         {data.message && <h3>{data.message}</h3>}
       </div>
-      <Pagination />
     </div>
   );
 }
