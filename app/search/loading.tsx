@@ -3,8 +3,6 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 function loading() {
-  const arr = Array(10);
-
   return (
     <div className="container flex flex-col px-4 py-6 mx-auto">
       <Skeleton width={150} />
