@@ -8,8 +8,9 @@ import Tabs from "@/components/Tabs";
 export default function SearchLayout({
   children,
 }: {
-  children: React.ReactNode;
-}) {
+    children: React.ReactNode;
+  }) {
+  
   return (
     <>
       <header className="w-full border-b-2 dark:border-[#3C3C3C]">
@@ -19,7 +20,7 @@ export default function SearchLayout({
           </Link>
           <SearchInput />
         </div>
-        <Tabs/>
+        <Tabs />
       </header>
       <main className="w-full">{children}</main>
     </>
