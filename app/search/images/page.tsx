@@ -9,15 +9,15 @@ async function page({
   const url = `https://www.googleapis.com/customsearch/v1?fields=searchInformation,queries,items&key=${process.env.GOOGLE_KEY}&cx=${process.env.GOOGLE_CX}&q=${searchParams.q}&start=${searchParams.start}&searchType=image`;
   const response = await fetch(url);
   const data = await response.json();
-
+  console.log(data.items);
+  
   return (
-    <div className="container mx-auto grid gap-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-1 gap-4">
+    <div className="container py-4 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
         {data.items?.map(
           (
             item: {
+              link: string;
               image: {
-                thumbnailLink: string;
                 height: number;
                 width: number;
               };
@@ -26,17 +26,16 @@ async function page({
             i: React.Key | null | undefined
           ) => (
             <div key={i}>
-              <Image
-                className="h-full max-w-full rounded-lg object-cover"
-                src={item.image.thumbnailLink}
-                width={item.image.width}
-                height={item.image.height}
-                alt=""
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={item.link}
+                alt="image"
+                loading="lazy"
               />
             </div>
           )
         )}
-      </div>
     </div>
   );
 }
